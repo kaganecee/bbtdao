@@ -1,12 +1,13 @@
-import React from 'react'
-import './assets/styles/App.css'
+import React from "react";
+import "./assets/styles/App.css";
+import ProposalForm from "./pages/proposalForm";
 
 function App() {
   return (
     <>
-      <h1>BBTDAO</h1>
+      <ProposalForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
