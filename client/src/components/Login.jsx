@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Login = () => {
-  return (
-    <div>
-      <button>Login Metamask</button>
-    </div>
-  );
-};
+const Login = ({ connectionToWallet }) => {
+    return ( 
+        <div>
+            <button onClick={connectionToWallet}>Login Metamask</button>
+        </div>
+    )
+}
 
 export default Login;
