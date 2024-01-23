@@ -1,3 +1,5 @@
+import "hardhat/console.sol";
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -44,7 +46,7 @@ contract DAO {
     event Voted(uint indexed proposalId, address indexed voter);
     event ProposalExecuted(uint indexed proposalId);
 
-    constructor() {
+    constructor() payable {
         admin = msg.sender;
         mint(msg.sender, 100);  // Mint initial tokens for the admin
     }
