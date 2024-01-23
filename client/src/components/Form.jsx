@@ -1,11 +1,14 @@
 /* eslint-disable */
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ createProposal }) => {
   const [proposal, setProposal] = useState();
   const [tokenCount, setTokenCount] = useState(0);
 
-  const handleSubmission = () => {};
+  const handleSubmission = async () => {
+    await createProposal(proposal)
+    setProposal('')
+  }
 
   return (
     <div className="proposal-form-container">
@@ -17,6 +20,7 @@ const Form = () => {
           type="text"
           onChange={(e) => setProposal(e.target.value)}
           className="form-input"
+          value={proposal}
         />
       </label>
 
