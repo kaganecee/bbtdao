@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .proposal-form-container {
   width: 500px;
@@ -14,7 +14,14 @@
   flex-direction: column;
   align-items: center;
 }
-
+header {
+  height: 80px;
+  background-color: #252d5b;
+}
+.proposal-header {
+  background-color: #252d5b;
+  letter-spacing: 0.05em;
+}
 .form-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -24,6 +31,10 @@
 
 .token-count {
   margin-bottom: 8px;
+}
+
+.cards-font-color {
+  color: #ef7878;
 }
 
 .form-label {
@@ -39,8 +50,7 @@
 
 .proposals-title {
   font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+  color: #ef7878;
 }
 
 .proposals-list {
@@ -52,25 +62,31 @@
 .proposal-item {
   margin-bottom: 8px;
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 50px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.proposal-info {
+/* .proposal-info {
   margin-right: 8px;
-}
+} */
 
 .vote-button,
 .submit-button {
-  background-color: #05273d;
-  color: #fff;
+  background-color: #fff;
+  color: #252d5b;
   padding: 8px 16px;
-  border: none;
+  border: 2px solid #252d5b;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.vote-button:hover,
+.submit-button:hover {
+  background-color: #252d5b;
+  color: #fff;
 }
 
 .vote-button:disabled,
@@ -86,13 +102,4 @@
 
 .comfortaa {
   font-family: "Comfortaa", Arial, sans-serif;
-}
-
-body {
-  font-family: "Comfortaa", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
 }
