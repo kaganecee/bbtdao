@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
-const AccountBox = () => {
+const AccountBox = ({logout}) => {
   const [openAccountBox, setOpenAccountBox] = useState(false);
   const handleAccountBoxClick = () => {
     setOpenAccountBox((prev) => !prev);
   };
 
   const handleLogout = () => {
-    console("Logout");
+    logout()
+    setOpenAccountBox(false)
   };
   return (
     <div className="relative inline-block text-left">
@@ -32,7 +33,7 @@ const AccountBox = () => {
         </button>
       </div>
       {openAccountBox && (
-        <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 w-40 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
           <div
             className="py-1 "
             role="menu"
