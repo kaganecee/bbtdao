@@ -7,10 +7,10 @@ const Card = ({ imageSrc, title }) => {
   return (
     <div>
       <div
-        className="bg-white shadow-lg rounded-md m-4 cursor-pointer border-inherit border-2 transition-transform transform hover:scale-105 hover:shadow-xl"
+        className="bg-white shadow-lg rounded-md m-12 cursor-pointer border-inherit border-2 transition-transform transform hover:scale-105 hover:shadow-xl"
         onClick={handleCardClick}
       >
-        <div className="px-6 py-4 card-bg">
+        <div className="px-16 py-12 card-bg">
           <img
             className="h-40 w-40 p-8 object-center"
             src={imageSrc}
@@ -18,7 +18,7 @@ const Card = ({ imageSrc, title }) => {
           />
         </div>
       </div>
-      <div className="font-bold tracking-widest text-center text-xl mb-2 comfortaa cards-font-color transition-opacity hover:opacity-75">
+      <div className="font-bold tracking-widest text-center text-3xl mb-2 comfortaa cards-font-color transition-opacity hover:opacity-75">
         {title}
       </div>
     </div>

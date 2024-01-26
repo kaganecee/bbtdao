@@ -5,6 +5,7 @@ import daoContract from '../../DAO.json'
 import { CONTRACT_ADDRESS } from '../../helpers/constants'
 import { getAccount } from '../../helpers/utils'
 import Header from '../../components/Header'
+import SecondaryHeader from '../../components/SecondaryHeader'
 
 const Voting = ({ logout }) => {
     const [web3, setWeb3] = useState(null)
@@ -79,9 +80,7 @@ const Voting = ({ logout }) => {
     return (
         <>
             <Header logout={logout} />
-            <h2 className="p-8 proposals-title comfortaa tracking-wider">
-                Proposals
-            </h2>
+            <SecondaryHeader project="Proposal List"/>
             <ul className="proposals-list flex justify-center flex-wrap items-center">
                 {proposals.map((proposal) => (
                     <li
@@ -93,7 +92,7 @@ const Voting = ({ logout }) => {
                         </div>
                         <div className="flex flex-col mt-6 p-6">
                             <span className="proposal-info font-extrabold comfortaa">
-                                Required Token: {proposal.tokenRequired}
+                                Required Token: 10
                             </span>
                             <button
                                 onClick={() => handleVoteClick(proposal.id)}

@@ -5,6 +5,7 @@ import DAOContract from '../../DAO.json'
 import { CONTRACT_ADDRESS } from '../../helpers/constants'
 import { getAccount } from '../../helpers/utils'
 import Header from '../../components/Header'
+import SecondaryHeader from '../../components/SecondaryHeader'
 
 const Proposal = ({logout}) => {
     const [web3, setWeb3] = useState(null)
@@ -48,7 +49,8 @@ const Proposal = ({logout}) => {
     return (
         <>
             <Header logout={logout}/>
-            <div style={{height:'88vh'}} className='flex justify-center items-center w-full h-full'>
+            <SecondaryHeader project="Create Proposal"/>
+            <div style={{height:'75vh'}} className='flex justify-center items-center w-full h-full'>
                 <Form createProposal={createProposal} />
             </div>
         </>

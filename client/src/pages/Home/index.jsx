@@ -8,8 +8,9 @@ const Home = () => {
   return (
     <>
       <Header/>
-      <div style={{height:'90vh'}} className="flex flex-col items-center justify-center p-24">
-        <div className="flex flex-row space-x-8 pt-8">
+      <div style={{height:'90vh'}} className="flex flex-col items-center justify-center p-24 gap-8">
+        <h1 className="text-3xl text-center leading-12 comfortaa w-8/12 tracking-widest">Remove limitations and centralization in traditional management systems with <span className="underline" style={{color:"#ef7878"}}>BBTDAO</span>. Dynamism is here.</h1>
+        <div className="flex flex-row gap-4 space-x-8 pt-8">
           <Link to="/voting">
             <Card imageSrc={vote} title="Voting" />
           </Link>
