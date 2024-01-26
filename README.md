@@ -56,10 +56,18 @@ Suitable for changing world conditions; to create a flexible, transparent and de
 
 1. Create a new account in Metamask.
 2. Add Metamask extension to your browser.
-3. Run the app in the frontend/src folder
+3. Run the app in the client folder
    ```sh
    npm run dev
    ```
 4. Connect Metamask to the project.
 5. You can now use the app.
 
+### Troubleshotting
+
+Error: Transaction reverted: function elector wasn't recognized.
+Solution: You must reset the metamask account's data.
+
+Error: Parameter decodign error: Returned values aren't valid, did it run out of Gas?
+Solution: Probably contract adress must be update.
+You can run ```npx hardhat scripts/deploy.js --network location``` this command and take correct address and paste it to client/src/helpers/constants/index.js
