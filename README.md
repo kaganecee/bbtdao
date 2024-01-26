@@ -1,13 +1,65 @@
-# Sample Hardhat Project
+<div align="center">
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+<img width="745" alt="Screenshot 2024-01-26 at 09 14 52" src="https://github.com/kaganecee/bbtdao/assets/56219023/d5b5a6dc-7324-41d8-ac91-06b2f0982cfd">
 
-Try running some of the following tasks:
+  <p align="center">
+    Blockchain Project for Decentralized University Clubs
+  </p>
+</div>
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+## About The Project
+
+The project is a web3 decentralized application (dApp) designed for streamlined university club management. Leveraging Ethereum blockchain, Solidity smart contracts, React frontend, and MetaMask integration, the dApp enhances transparency, governance, and user experience. The project is open-source on GitHub, prioritizing community collaboration, regular updates, and future enhancements.
+
+### Problem definition:
+Removing limitations and centralization in traditional management systems.
+
+### Necessity:
+Suitable for changing world conditions; to create a flexible, transparent and democratic management structure.
+
+### Model
+
+![MODEL](https://github.com/kaganecee/bbtdao/assets/56219023/a792f1b7-0670-4d00-8a3f-1e3cd89d2d8e)
+
+## Built With
+
+- React.js
+- Metamask
+- Solidity
+- Web3
+- Hardhat
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/kaganecee/bbtdao
+   ```
+2. Install NPM packages to root folder and client folder
+   ```sh
+   npm install
+   ```
+3. Run the app in the client folder
+
+   ```sh
+    npm run dev
+   ```
+
+4. For contract deployment, run the following commands in the root folder
+   ```sh
+   npx hardhat compile
+   npx hardhat node
+   npx hardhat scripts/deploy.js --network location
+   ```
+
+### Usage
+
+1. Create a new account in Metamask.
+2. Add Metamask extension to your browser.
+3. Run the app in the frontend/src folder
+   ```sh
+   npm run dev
+   ```
+4. Connect Metamask to the project.
+5. You can now use the app.
+
