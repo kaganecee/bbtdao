@@ -4,10 +4,18 @@ import { useState } from 'react'
 const Form = ({ createProposal }) => {
     const [proposal, setProposal] = useState()
     const [tokenCount, setTokenCount] = useState()
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleSubmission = async () => {
         await createProposal(proposal)
-        setProposal('')
+            .then(() => {
+                setIsSubmitted(true)
+                setProposal('')
+                setTokenCount('')
+            })
+            .finally(() => {
+                setIsSubmitted(false)
+            })
     }
 
     return (
@@ -42,6 +50,14 @@ const Form = ({ createProposal }) => {
             >
                 Create Proposal
             </button>
+            {isSubmitted && (
+                <div className="mt-4">
+                    <p className=" text-green-600 text-lg">
+                        Submission success!
+                    </p>
+                    {/* You can add additional content or actions after submission */}
+                </div>
+            )}
         </div>
     )
 }

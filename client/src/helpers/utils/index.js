@@ -12,5 +12,6 @@ export const detectProvider = () => {
 
 export const getAccount = async (web3) => {
     const accounts = await web3.eth.getAccounts();
+    console.log('fetched accounts:',accounts)
     return accounts[0];
 }

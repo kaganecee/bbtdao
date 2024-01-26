@@ -4,8 +4,9 @@ import Form from '../../components/Form'
 import DAOContract from '../../DAO.json'
 import { CONTRACT_ADDRESS } from '../../helpers/constants'
 import { getAccount } from '../../helpers/utils'
+import Header from '../../components/Header'
 
-const Proposal = () => {
+const Proposal = ({logout}) => {
     const [web3, setWeb3] = useState(null)
     const [daoContract, setDAOContract] = useState(null)
 
@@ -38,22 +39,18 @@ const Proposal = () => {
             const accounts = await getAccount(web3)
             const receipt = await daoContract.methods
                 .createProposal(description)
-                .send({ from: accounts[0] })
-            const event = receipt.events.ProposalCreated
-            if (event) {
-                console.log('Proposal created successfully')
-            } else {
-                console.error(
-                    'Error: Proposal creation event not found in the receipt'
-                )
-            }
+                .send({ from: accounts })
+            console.log('succesfully created:',receipt)
         } catch (error) {
             console.error('Error creating proposal', error)
         }
     }
     return (
         <>
-            <Form createProposal={createProposal} />
+            <Header logout={logout}/>
+            <div style={{height:'88vh'}} className='flex justify-center items-center w-full h-full'>
+                <Form createProposal={createProposal} />
+            </div>
         </>
     )
 }
