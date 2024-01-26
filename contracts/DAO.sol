@@ -73,7 +73,7 @@ contract DAO {
         emit ProposalCreated(proposalId, msg.sender, _description);
     }
 
-    function vote(uint _proposalId) public onlyMembers onlyPendingProposal(_proposalId) notVoted(_proposalId) {
+    function vote(uint _proposalId) public onlyMembers {
         proposals[_proposalId].voters[msg.sender] = true;
         proposals[_proposalId].votes++;
 
@@ -97,5 +97,13 @@ contract DAO {
 
     function rejectProposal(uint _proposalId) public onlyAdmin onlyPendingProposal(_proposalId) {
         proposals[_proposalId].status = ProposalStatus.Rejected;
+    }
+
+    fallback() external payable {
+        console.log("----- fallback:", msg.value);
+    }
+
+    receive() external payable {
+        console.log("----- receive:", msg.value);
     }
 }
